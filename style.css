@@ -7,7 +7,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #ffffff;
     overflow-x: hidden;
 }
 
@@ -257,7 +257,7 @@ body {
 .js { color: #F7DF1E; }
 .python { color: #3776AB; }
 .cpp { color: #00599C; }
-.github { color: #333; }
+.github { color: #ffffff; }
 
 /* Hobbies */
 .hobbies-grid {
