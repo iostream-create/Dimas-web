@@ -1,190 +1,161 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My web - CIAO!</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourName - WebDev & Network Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Background Network Effect -->
+    <div class="network-bg">
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+    </div>
+
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">Dimas Aksa Oktapian</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
             </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#hobbies" class="nav-link">Hobbies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-text slide-down">
-                <h1>Halo, Saya <span class="gradient-text">Dimas Aksa Oktapian</span></h1>
-                <p>Orang ambisius dengan sejuta mimpi dan seribu satu skill!</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Hubungi Saya
-                    </a>
-                    <a href="#about" class="btn btn-outline">
-                        <i class="fas fa-user"></i> Lihat Profil
-                    </a>
-                </div>
+            <div class="profile-pic">
+                <img src="https://via.placeholder.com/200/4A90E2/FFFFFF?text=You" alt="Profile Picture">
             </div>
-            <div class="hero-image slide-down">
-                <div class="profile-pic" aria-label="Foto Profil">
-                    <i class="fas fa-user"></i>
-                </div>
+            <h1 class="hero-title">WebDev & Network Engineer</h1>
+            <p class="hero-subtitle">Membangun jaringan digital yang seamless dan powerful</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Hubungi Saya</a>
+                <a href="#skills" class="btn-secondary">Lihat Skills</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title slide-down">Tentang Saya</h2>
-            <div class="about-grid">
-                <div class="about-left slide-down">
-                    <div class="personal-info">
-                        <div class="info-item">
-                            <i class="fas fa-birthday-cake"></i>
-                            <span>Barru, 26-06-2008</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Barru, Sulawesi Selatan</span>
-                        </div>
-                        <div class="info-item education-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Sekolah menengah kejuruan, Jurusan Teknik Komputer & Jaringan</span>
-                        </div>
-                    </div>
-                    <div class="motivation">
-                        <blockquote>
-                            <p>"Karena Cinta, Kecewa, Dan Harapan manusia bisa membuka semua potensi dirinya"</p>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="about-right slide-down">
-                    <p>20+ Web project🔥, ∞ cups coffee☕</p>
-                </div>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>Saya adalah Web Developer & Network Engineer yang passionate dalam menciptakan solusi digital yang inovatif. Menggabungkan kemampuan coding frontend/backend dengan keahlian networking untuk membangun infrastruktur digital yang reliable dan scalable.</p>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title slide-down">Skills & Kemampuan</h2>
-            <div class="skills-container">
-                <div class="skill-category slide-down">
-                    <h3>Technical Skills</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar">
-                            <span>HTML/CSS</span>
-                            <div class="progress" data-width="95%"></div>
-                        </div>
-                        <div class="skill-bar">
-                            <span>JavaScript</span>
-                            <div class="progress" data-width="85%"></div>
-                        </div>
-                        <div class="skill-bar">
-                            <span>[Skill 3]</span>
-                            <div class="progress" data-width="80%"></div>
-                        </div>
-                    </div>
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-html5 skill-icon html"></i>
+                    <span>HTML</span>
                 </div>
-                <div class="skill-icons slide-down">
-                    <h3>Tools</h3>
-                    <div class="icons-grid">
-                        <i class="fab fa-html5" data-tooltip="HTML5"></i>
-                        <i class="fab fa-css3" data-tooltip="CSS3"></i>
-                        <i class="fab fa-js-square" data-tooltip="JavaScript"></i>
-                    </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt skill-icon css"></i>
+                    <span>CSS</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js-square skill-icon js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-python skill-icon python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-cuttlefish skill-icon cpp"></i>
+                    <span>C++</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-github skill-icon github"></i>
+                    <span>GitHub</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Hobbies Section -->
-    <section id="hobbies" class="hobbies">
+    <section id="hobbies" class="section">
         <div class="container">
-            <h2 class="section-title slide-down">Hobi & Minat</h2>
+            <h2 class="section-title">Hobbies</h2>
             <div class="hobbies-grid">
-                <div class="hobby-card slide-down">
-                    <div class="hobby-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h3>[Hobi 1]</h3>
-                    <p>Playing Game "Garena Delta Force🔥"</p>
-                </div>
-                <div class="hobby-card slide-down">
-                    <div class="hobby-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <h3>[Hobi 2]</h3>
-                    <p>Mengidolakan Ido Grup JKT48 "My oshi is Lily❤"</p>
-                </div>
-                <div class="hobby-card slide-down">
+                <div class="hobby-item">
                     <div class="hobby-icon">
                         <i class="fas fa-gamepad"></i>
                     </div>
-                    <h3>[Hobi 3]</h3>
-                    <p>Coding, WebDev & Network device configuration 👨‍💻</p>
+                    <h3>Gaming</h3>
+                    <p>Competitive gaming & strategy games</p>
+                </div>
+                <div class="hobby-item">
+                    <div class="hobby-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Networking</h3>
+                    <p>Mengoptimalkan jaringan & troubleshooting</p>
+                </div>
+                <div class="hobby-item">
+                    <div class="hobby-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Music</h3>
+                    <p>Electronic & Lo-fi beats</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title slide-down">Hubungi Saya</h2>
-            <div class="contact-content">
-                <div class="contact-info slide-down">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:iostream911@gmail.com">iostream911@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/6285122458298" target="_blank" rel="noopener noreferrer">+6285122458298</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-telegram"></i>
-                        <a href="https://t.me/Tehpucuts" target="_blank" rel="noopener noreferrer">@Tehpucuts</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-instagram"></i>
-                        <a href="https://instagram.com/aska.ra50" target="_blank" rel="noopener noreferrer">@aska.ra50</a>
-                    </div>
-                </div>
-                <form class="contact-form slide-down" id="contactForm">
-                    <input type="text" placeholder="Nama Lengkap" required />
-                    <input type="email" placeholder="Email" required />
-                    <textarea placeholder="Pesan Anda..." rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-                </form>
+            <h2 class="section-title">Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://wa.me/6281234567890" class="social-link whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://instagram.com/yourusername" class="social-link instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://t.me/yourusername" class="social-link telegram" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="mailto:your.email@gmail.com" class="social-link email" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
             </div>
         </div>
     </section>
-
-    <!-- Scroll Top -->
-    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
 
     <script src="script.js"></script>
 </body>
