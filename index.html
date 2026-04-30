@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My web - CIAO!</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
     <!-- Navbar -->
@@ -20,7 +20,7 @@
                 <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
+            <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="hero-image slide-down">
-                <div class="profile-pic">
+                <div class="profile-pic" aria-label="Foto Profil">
                     <i class="fas fa-user"></i>
                 </div>
             </div>
@@ -66,9 +66,9 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Barru, Sulawesi Selatan</span>
                         </div>
-                        <div class="info-item">
+                        <div class="info-item education-item">
                             <i class="fas fa-graduation-cap"></i>
-                            <span>Sekolah menengah kejuruan "TKJ"</span>
+                            <span>Sekolah menengah kejuruan, Jurusan Teknik Komputer & Jaringan</span>
                         </div>
                     </div>
                     <div class="motivation">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="about-right slide-down">
-                    <p>20+Web project🔥, ∞ cups coffee☕</p>
+                    <p>20+ Web project🔥, ∞ cups coffee☕</p>
                 </div>
             </div>
         </div>
@@ -94,15 +94,15 @@
                     <div class="skill-bars">
                         <div class="skill-bar">
                             <span>HTML/CSS</span>
-                            <div class="progress" data-width="95"></div>
+                            <div class="progress" data-width="95%"></div>
                         </div>
                         <div class="skill-bar">
                             <span>JavaScript</span>
-                            <div class="progress" data-width="85"></div>
+                            <div class="progress" data-width="85%"></div>
                         </div>
                         <div class="skill-bar">
                             <span>[Skill 3]</span>
-                            <div class="progress" data-width="80"></div>
+                            <div class="progress" data-width="80%"></div>
                         </div>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                         <i class="fas fa-gamepad"></i>
                     </div>
                     <h3>[Hobi 3]</h3>
-                    <p>Coding,WebDev&Network device configuration👨‍💻"</p>
+                    <p>Coding, WebDev & Network device configuration 👨‍💻</p>
                 </div>
             </div>
         </div>
@@ -153,29 +153,27 @@
         <div class="container">
             <h2 class="section-title slide-down">Hubungi Saya</h2>
             <div class="contact-content">
-                <!-- TIMPA bagian contact-info (baris ~140) -->
-<div class="contact-info slide-down">
-    <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:[iostream911@gmail.com]">iostream911@gmail.com</a>
-    </div>
-    <div class="contact-item">
-        <i class="fab fa-whatsapp"></i>
-        <a href="https://wa.me/[6285122458298]" target="_blank">+6285122458298</a>
-    </div>
-    <div class="contact-item">
-        <i class="fab fa-telegram"></i>
-        <a href="https://t.me/[Tehpucuts]" target="_blank">@Tehpucuts</a>
-    </div>
-    <div class="contact-item">
-        <i class="fab fa-instagram"></i>
-        <a href="https://instagram.com/[aska.ra50]" target="_blank">@aska.ra50</a>
-    </div>
-</div>
+                <div class="contact-info slide-down">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:iostream911@gmail.com">iostream911@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/6285122458298" target="_blank" rel="noopener noreferrer">+6285122458298</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <a href="https://t.me/Tehpucuts" target="_blank" rel="noopener noreferrer">@Tehpucuts</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://instagram.com/aska.ra50" target="_blank" rel="noopener noreferrer">@aska.ra50</a>
+                    </div>
                 </div>
                 <form class="contact-form slide-down" id="contactForm">
-                    <input type="text" placeholder="Nama Lengkap" required>
-                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Nama Lengkap" required />
+                    <input type="email" placeholder="Email" required />
                     <textarea placeholder="Pesan Anda..." rows="5" required></textarea>
                     <button type="submit" class="btn btn-primary">Kirim Pesan</button>
                 </form>
@@ -184,10 +182,10 @@
     </section>
 
     <!-- Scroll Top -->
-    <button class="scroll-top" id="scrollTop">
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
         <i class="fas fa-chevron-up"></i>
     </button>
 
     <script src="script.js"></script>
 </body>
-  </html>
+</html>
