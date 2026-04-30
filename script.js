@@ -7,11 +7,15 @@ const slideElements = document.querySelectorAll('.slide-down');
 const scrollTopBtn = document.getElementById('scrollTop');
 const contactForm = document.getElementById('contactForm');
 const skillProgress = document.querySelectorAll('.progress');
+const hero = document.querySelector('.hero');
 
 // Mobile Menu Toggle
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     hamburger.classList.toggle('active');
+    
+    // Reset hero transform on hamburger click to fix profile pic flipping issue
+    hero.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
 });
 
 // Close mobile menu when clicking on a link
@@ -19,6 +23,9 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
+        
+        // Reset hero transform as well
+        hero.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
     });
 });
 
@@ -127,9 +134,10 @@ contactForm.addEventListener('submit', (e) => {
     }, 2000);
 });
 
-// Hero mouse parallax
+// Hero mouse parallax (disable effect when menu is active for better UX)
 document.addEventListener('mousemove', (e) => {
-    const hero = document.querySelector('.hero');
+    if (navMenu.classList.contains('active')) return; // disable parallax if menu open
+
     const rect = hero.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -144,7 +152,7 @@ document.addEventListener('mousemove', (e) => {
 });
 
 document.addEventListener('mouseleave', () => {
-    document.querySelector('.hero').style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+    hero.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
 });
 
 // Typing effect
