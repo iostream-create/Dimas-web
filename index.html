@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Nama Anda] - Portfolio Pribadi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">[Nama Anda]</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text slide-down">
+                <h1>Halo, Saya <span class="gradient-text">[Nama Lengkap Anda]</span></h1>
+                <p>[Deskripsi singkat tentang diri Anda]</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Hubungi Saya
+                    </a>
+                    <a href="#about" class="btn btn-outline">
+                        <i class="fas fa-user"></i> Lihat Profil
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image slide-down">
+                <div class="profile-pic">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title slide-down">Tentang Saya</h2>
+            <div class="about-grid">
+                <div class="about-left slide-down">
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>[Tanggal Lahir, Tempat Lahir]</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>[Kota, Provinsi]</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>[Pendidikan Terakhir]</span>
+                        </div>
+                    </div>
+                    <div class="motivation">
+                        <blockquote>
+                            <p>"[Motivasi hidup Anda]"</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="about-right slide-down">
+                    <p>[Paragraf tentang diri Anda]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title slide-down">Skills & Kemampuan</h2>
+            <div class="skills-container">
+                <div class="skill-category slide-down">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span>HTML/CSS</span>
+                            <div class="progress" data-width="95"></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>JavaScript</span>
+                            <div class="progress" data-width="85"></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span>[Skill 3]</span>
+                            <div class="progress" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-icons slide-down">
+                    <h3>Tools</h3>
+                    <div class="icons-grid">
+                        <i class="fab fa-html5" data-tooltip="HTML5"></i>
+                        <i class="fab fa-css3" data-tooltip="CSS3"></i>
+                        <i class="fab fa-js-square" data-tooltip="JavaScript"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="hobbies">
+        <div class="container">
+            <h2 class="section-title slide-down">Hobi & Minat</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-card slide-down">
+                    <div class="hobby-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>[Hobi 1]</h3>
+                    <p>[Deskripsi singkat]</p>
+                </div>
+                <div class="hobby-card slide-down">
+                    <div class="hobby-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>[Hobi 2]</h3>
+                    <p>[Deskripsi singkat]</p>
+                </div>
+                <div class="hobby-card slide-down">
+                    <div class="hobby-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>[Hobi 3]</h3>
+                    <p>[Deskripsi singkat]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title slide-down">Hubungi Saya</h2>
+            <div class="contact-content">
+                <div class="contact-info slide-down">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:[email@example.com]">[email@example.com]</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/[628xxxxxxxxx]" target="_blank">+62 [Nomor WA]</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://instagram.com/[username]" target="_blank">@[username]</a>
+                    </div>
+                </div>
+                <form class="contact-form slide-down" id="contactForm">
+                    <input type="text" placeholder="Nama Lengkap" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Pesan Anda..." rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll Top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+  </html>
