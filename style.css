@@ -278,7 +278,7 @@ body {
 
 .hobby-item:hover {
     transform: translateY(-10px);
-    background: rgba(74, 144, 226, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .hobby-icon {
@@ -398,20 +398,3 @@ body {
         min-width: 100px;
         padding: 1rem;
     }
-    /* --- KODE BARU UNTUK MEMUTIHKAN TEKS DESKRIPSI --- */
-
-/* Mengubah teks deskripsi About Me */
-.about-content p {
-    color: #ffffff;
-}
-
-/* Mengubah teks nama Skill (HTML, CSS, dll) */
-.skill-item span {
-    color: #ffffff;
-}
-
-/* Mengubah teks deskripsi di bagian Hobbies (Gaming, Networking, Music) */
-.hobby-item p {
-    color: #ffffff;
-}
-/* ------------------------------------------------ */
