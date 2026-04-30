@@ -1,95 +1,4 @@
-// DOM Elements
-const navbar = document.getElementById('navbar');
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-const slideElements = document.querySelectorAll('.slide-down');
-const scrollTopBtn = document.getElementById('scrollTop');
-const contactForm = document.getElementById('contactForm');
-const skillProgress = document.querySelectorAll('.progress');
-const hero = document.querySelector('.hero');
-
-// Mobile Menu Toggle
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-    
-    // Reset hero transform on hamburger click to fix profile pic flipping issue
-    hero.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-});
-
-// Close mobile menu when clicking on a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-        
-        // Reset hero transform as well
-        hero.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-    });
-});
-
-// Navbar scroll effect & active link
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-
-    let current = '';
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-
-    if (window.scrollY > 500) {
-        scrollTopBtn.classList.add('show');
-    } else {
-        scrollTopBtn.classList.remove('show');
-    }
-});
-
-// Slide down animation
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-        }
-    });
-}, observerOptions);
-
-slideElements.forEach(el => observer.observe(el));
-
-// Skill progress bars
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const progress = entry.target;
-            const width = progress.getAttribute('data-width');
-            progress.style.width = width;
-        }
-    });
-}, { threshold: 0.5 });
-
-skillProgress.forEach(progress => skillObserver.observe(progress));
-
-// Smooth scroll
+// Smooth scrolling untuk navbar links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -103,63 +12,94 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll top
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(15, 15, 35, 0.98)';
+        navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+    } else {
+        navbar.style.background = 'rgba(15, 15, 35, 0.95)';
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+// Intersection Observer untuk animasi scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            
+            // Dynamic slide direction based on scroll position
+            const rect = entry.target.getBoundingClientRect();
+            if (rect.top < window.innerHeight / 2) {
+                entry.target.classList.add('slide-down');
+                entry.target.classList.remove('slide-up');
+            } else {
+                entry.target.classList.add('slide-up');
+                entry.target.classList.remove('slide-down');
+            }
+        }
+    });
+}, observerOptions);
+
+// Observe semua section dan elements
+document.querySelectorAll('.section, .skill-item, .hobby-item, .social-link').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+});
+
+// Skill hover effect dengan particle
+document.querySelectorAll('.skill-item').forEach(skill => {
+    skill.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-15px) scale(1.05)';
+        
+        // Create particle effect
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #4A90E2;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particle-float 1s ease-out forwards;
+            left: 50%;
+            top: 50%;
+        `;
+        this.appendChild(particle);
+        
+        setTimeout(() => particle.remove(), 1000);
+    });
+    
+    skill.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(-10px)';
     });
 });
 
-// Contact form
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
-    
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-    btn.disabled = true;
-    
+// Profile picture pulse animation
+setInterval(() => {
+    const profilePic = document.querySelector('.profile-pic');
+    profilePic.style.boxShadow = `
+        0 0 40px rgba(74, 144, 226, 0.4),
+        0 20px 40px rgba(74, 144, 226, 0.2)
+    `;
     setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check"></i> Terkirim!';
-        btn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
-        
-        contactForm.reset();
-        
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-            btn.style.background = '';
-        }, 2500);
-    }, 2000);
-});
+        profilePic.style.boxShadow = `
+            0 20px 40px rgba(74, 144, 226, 0.2)
+        `;
+    }, 500);
+}, 3000);
 
-// Hero mouse parallax (disable effect when menu is active for better UX)
-document.addEventListener('mousemove', (e) => {
-    if (navMenu.classList.contains('active')) return; // disable parallax if menu open
-
-    const rect = hero.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = (y - centerY) / 30;
-    const rotateY = (centerX - x) / 30;
-    
-    hero.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-});
-
-document.addEventListener('mouseleave', () => {
-    hero.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-});
-
-// Typing effect
-function typeWriter(element, text, speed = 80) {
+// Typing effect untuk hero title (optional)
+function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
-    
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -170,23 +110,41 @@ function typeWriter(element, text, speed = 80) {
     type();
 }
 
-window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero-text h1');
-    const fullText = heroTitle.textContent;
-    setTimeout(() => typeWriter(heroTitle, fullText), 800);
+// Uncomment untuk enable typing effect
+// window.addEventListener('load', () => {
+//     const title = document.querySelector('.hero-title');
+//     typeWriter(title, 'WebDev & Network Engineer', 100);
+// });
+
+// Parallax effect untuk network nodes
+window.addEventListener('mousemove', (e) => {
+    const nodes = document.querySelectorAll('.network-bg .node');
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+    
+    nodes.forEach((node, index) => {
+        const speed = (index + 1) * 0.02;
+        node.style.transform = `
+            translate(${x * 50 * speed}px, ${y * 50 * speed}px)
+        `;
+    });
 });
 
-// Card hover effects
-document.querySelectorAll('.hobby-card, .contact-item, .info-item').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-8px) scale(1.02)';
-    });
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0) scale(1)';
-    });
+// Preloader (optional)
+window.addEventListener('load', () => {
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 100);
 });
 
-// Page load animation
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
+// Add CSS keyframes dynamically
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes particle-float {
+        0% { transform: translate(0, 0) scale(1); opacity: 1; }
+        100% { transform: translate(var(--mouse-x, 0), var(--mouse-y, -100px)) scale(0); opacity: 0; }
+    }
+`;
+document.head.appendChild(style);
