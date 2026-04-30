@@ -254,6 +254,7 @@ body {
     box-shadow: var(--shadow-hover);
 }
 
+/* Profile Pic */
 .profile-pic {
     width: 340px;
     height: 340px;
@@ -264,9 +265,14 @@ body {
     justify-content: center;
     margin: 0 auto;
     box-shadow: var(--shadow-light);
-    transition: all 0.4s ease;
+    transition: transform 0.4s ease;
     border: 8px solid var(--white);
     position: relative;
+}
+
+/* Remove transform rotate on hover to prevent flipping */
+.profile-pic:hover {
+    transform: scale(1.05);
 }
 
 .profile-pic::before {
@@ -283,10 +289,6 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.profile-pic:hover {
-    transform: scale(1.05) rotate(5deg);
-}
-
 .profile-pic:hover::before {
     opacity: 1;
 }
@@ -294,7 +296,7 @@ body {
 .profile-pic i {
     font-size: 6.5rem;
     color: var(--primary-blue);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .profile-pic:hover i {
@@ -336,6 +338,7 @@ section {
     margin-bottom: 3rem;
 }
 
+/* Fix education icon circle shape */
 .info-item {
     display: flex;
     align-items: center;
@@ -346,7 +349,6 @@ section {
     border-radius: 16px;
     transition: all 0.4s ease;
     border: 1px solid rgba(79, 70, 229, 0.1);
-    backdrop-filter: blur(10px);
 }
 
 .info-item:hover {
@@ -360,7 +362,7 @@ section {
     height: 50px;
     background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     color: var(--white);
-    border-radius: 50%;
+    border-radius: 50%; /* Ensure perfect circle for all icons */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -368,6 +370,12 @@ section {
     box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
 }
 
+/* Force education icon smaller font size and centered */
+.info-item.education-item i {
+    font-size: 1.5rem;
+}
+
+/* Motivation block */
 .motivation {
     margin-top: 2rem;
 }
@@ -447,6 +455,7 @@ section {
     overflow: hidden;
     position: relative;
     border: 1px solid rgba(79, 70, 229, 0.2);
+    width: 0;
 }
 
 .progress::after {
@@ -735,4 +744,4 @@ section {
         flex-direction: column;
         align-items: stretch;
     }
-}
+    }
