@@ -695,20 +695,6 @@ section {
     box-shadow: var(--shadow-hover);
 }
 
-/* TELEGRAM ICON STYLING */
-.contact-item .fab.fa-telegram {
-    background: linear-gradient(135deg, #0088CC, #00A8E8) !important;
-    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4) !important;
-}
-
-.contact-item a[href*="t.me"] {
-    color: #0088CC !important;
-}
-
-.contact-item a[href*="t.me"]:hover {
-    color: #00A8E8 !important;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .hamburger {
